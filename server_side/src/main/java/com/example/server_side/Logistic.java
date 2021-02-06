@@ -24,6 +24,8 @@ public class Logistic {
     }
 
     // queries
+    // first: time estimate
+    // second: white box id
     protected Tuple<Integer, Integer> getEarliestWhitebox() {
         if (activeSessionCustomerLoc == null) {
             return new Tuple<Integer, Integer>(-1, -1);

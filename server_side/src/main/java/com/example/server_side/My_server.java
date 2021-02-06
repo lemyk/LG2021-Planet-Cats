@@ -60,13 +60,15 @@ public class My_server {
         return null;
     }
 
+
+
     // in seconds
-    public int estimateArrival(){
+    public Tuple<Integer, Integer> estimateArrival(){
         if (current_session != null) {
             myLogistic.retrieveCustomerLoc(myDatabase.get_user_profile(current_session));
-            return myLogistic.getEarliestWhitebox().x;
+            return myLogistic.getEarliestWhitebox();
         }
-        return -1;
+        return new Tuple(-1, -1);
     }
 
     public void enqueueForDoctor(){
