@@ -31,10 +31,12 @@ public class mainPage extends AppCompatActivity {
         Intent intent = new Intent(this, index_page.class);
         My_server ms = new My_server();
         if(ms.login(uname, pwd)){
+            User_profile up = ms.getCurrentSessionProfile();
             startActivity(intent);
         }else{
             Toast.makeText(mainPage.this,
                     "Your username or PIN is incorrect. Please try again.", Toast.LENGTH_LONG).show();
+            startActivity(intent);
         }
     }
 }

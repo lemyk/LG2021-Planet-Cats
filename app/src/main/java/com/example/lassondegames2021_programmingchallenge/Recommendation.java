@@ -9,6 +9,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class Recommendation extends AppCompatActivity {
+    Symptoms sm = new Symptoms();
     int eval = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class Recommendation extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if(extras != null) {
             eval = extras.getInt("eval_score");
+            sm = (Symptoms)extras.getParcelable("symtm");
         }
 
         LinearLayout ll = (LinearLayout) findViewById(R.id.lRecomm);
@@ -29,8 +31,9 @@ public class Recommendation extends AppCompatActivity {
         TextView tv = new TextView(this);
         tv.setTextColor(Color.BLACK);
         tv.setTextSize(18f);
-        tv.setText("hello");
-
+        String symptoms_desc = sm.getDesc();
+        String symptoms_rec = sm.getRecommendation();
+        tv.setText(symptoms_desc + "\n" + symptoms_rec);
 
         return tv;
     }
