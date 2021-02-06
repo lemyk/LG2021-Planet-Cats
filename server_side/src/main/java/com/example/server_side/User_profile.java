@@ -12,7 +12,6 @@ public class User_profile {
     }
 
     protected User_profile(){
-
     }
 
     protected void update_id(String new_id){

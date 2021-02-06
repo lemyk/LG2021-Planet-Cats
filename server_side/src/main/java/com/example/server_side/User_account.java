@@ -14,7 +14,7 @@ public class User_account {
     }
 
     protected boolean is_auth(String sin) {
-        if (sin == this.credential_sin_number) {
+        if (sin.equals(this.credential_sin_number)) {
             return true;
         }
         return false;

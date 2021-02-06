@@ -29,8 +29,12 @@ public class Database {
         return false;
     }
 
-    protected boolean is_correct_combination(String username, String sin) {
-        return get_user_account_by_name(username).is_auth(sin);
+    protected User_account auth(String username, String sin) {
+        User_account temp = get_user_account_by_name(username);
+        if (temp.is_auth(sin)) {
+            return temp;
+        };
+        return null;
     }
 
     protected User_account get_user_account_by_name(String username) {
@@ -40,6 +44,10 @@ public class Database {
             }
         }
         return null;
+    }
+
+    protected User_profile get_user_profile(User_account a) {
+        return account_collection.get(a);
     }
     // operations
 }
