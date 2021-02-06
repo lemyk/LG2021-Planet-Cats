@@ -40,6 +40,19 @@ public class Logistic {
         return minTime;
     }
 
+    // first: id
+    // second: distance in meter
+    protected ArrayList<Tuple<Integer, Integer>> getWhiteBoxData() {
+        if (activeSessionCustomerLoc == null) {
+            return null;
+        }
+        ArrayList<Tuple<Integer, Integer>> result = new ArrayList<Tuple<Integer, Integer>>();
+        for (WhiteBox i : whiteboxList){
+            result.add(new Tuple(i.getId(), i.getLoc().calculateDistance(activeSessionCustomerLoc)));
+        }
+        return result;
+    }
+
     // private
     private int getNewId(){
         return availableID++;

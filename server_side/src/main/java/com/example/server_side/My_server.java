@@ -1,5 +1,7 @@
 package com.example.server_side;
 
+import java.util.ArrayList;
+
 public class My_server {
     private AccountDatabase myDatabase = new AccountDatabase();
     private User_account current_session;
@@ -71,6 +73,10 @@ public class My_server {
             return myLogistic.getEarliestWhitebox();
         }
         return new Tuple(-1, -1);
+    }
+
+    public ArrayList<Tuple<Integer, Integer>> getWhiteboxData() {
+        return myLogistic.getWhiteBoxData();
     }
 
     public void enqueueForDoctor(){
