@@ -85,12 +85,7 @@ public class My_server {
 
     public static void main(String[] args) {
         My_server a = new My_server();
-        boolean test1 = a.create_new_account("a", "123");
-        System.out.println(test1);
-        System.out.println(a.current_session.get_username());
-        System.out.println(a.update_profile("yes", "yes", "no"));
-        System.out.println(a.logout());
-        boolean test2 = a.create_new_account("a", "123");
-        System.out.println(test2);
+        //boolean test1 = a.myDatabase.has_user("lemyk");
+        System.out.println(a.login("lemyk", "1234"));
     }
 }
