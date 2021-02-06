@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LassondeGames2021ProgrammingChallenge">
-        <activity android:name=".Recommendation"></activity>
+        <activity android:name=".LocateDoct"></activity>
+        <activity android:name=".Recommendation" />
         <activity android:name=".symptom_tracker" />
         <activity android:name=".index_page" />
         <activity android:name=".mainPage">

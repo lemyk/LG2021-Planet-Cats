@@ -152,7 +152,7 @@ public class symptom_tracker extends AppCompatActivity {
         boolean v_symp = false;
         boolean cP_symp = false;*/
         if(evaluation_point >= 18){
-
+            
         }
         else if(evaluation_point >= 12 && evaluation_point < 18){
             //intent2.setData(Uri.parse("tel:+14379707012"));
