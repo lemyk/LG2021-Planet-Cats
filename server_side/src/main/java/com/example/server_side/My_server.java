@@ -1,7 +1,7 @@
 package com.example.server_side;
 
 public class My_server {
-    private Database my_database = new Database();
+    private AccountDatabase my_database = new AccountDatabase();
     private User_account current_session;
 
     public boolean create_new_account(String username, String sin){
@@ -43,6 +43,26 @@ public class My_server {
             return true;
         }
         return false;
+    }
+
+    public int estimateArrival(){
+        return 0;
+    }
+
+    public void enqueueForDoctor(){
+
+    }
+
+    public void cancelQueue(){
+
+    }
+
+    public void receiveInfo(float degree){
+
+    }
+
+    private void createReport(){
+
     }
 
     public static void main(String[] args) {
