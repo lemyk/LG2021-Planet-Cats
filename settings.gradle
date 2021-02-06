@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Lassonde Games 2021 - Programming Challenge"
