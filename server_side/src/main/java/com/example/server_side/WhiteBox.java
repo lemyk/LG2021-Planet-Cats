@@ -1,6 +1,8 @@
 package com.example.server_side;
 
-public class WhiteBox {
+import java.io.Serializable;
+
+public class WhiteBox implements Serializable {
     protected int task_duration;
     private LocationStats location;
     private int id;

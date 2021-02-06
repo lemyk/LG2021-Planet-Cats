@@ -1,6 +1,8 @@
 package com.example.server_side;
 
-public class User_account {
+import java.io.Serializable;
+
+public class User_account implements Serializable {
     private String credential_name;
     private String credential_sin_number;
 

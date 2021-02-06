@@ -1,6 +1,8 @@
 package com.example.server_side;
 
-public class LocationStats {
+import java.io.Serializable;
+
+public class LocationStats implements Serializable {
     private int x;
     private int y;
 

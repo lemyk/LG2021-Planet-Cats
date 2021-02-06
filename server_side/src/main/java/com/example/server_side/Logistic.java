@@ -1,8 +1,9 @@
 package com.example.server_side;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Logistic {
+public class Logistic implements Serializable {
     private ArrayList<WhiteBox> whiteboxList = new ArrayList<WhiteBox>();
     private int availableID = 0;
     private LocationStats activeSessionCustomerLoc;

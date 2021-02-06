@@ -1,8 +1,9 @@
 package com.example.server_side;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class AccountDatabase {
+public class AccountDatabase implements Serializable {
     private HashMap<User_account, User_profile> account_collection = new HashMap<User_account, User_profile>();
 
     // commands

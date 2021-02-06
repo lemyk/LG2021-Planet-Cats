@@ -1,8 +1,9 @@
 package com.example.server_side;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class My_server {
+public class My_server implements Serializable {
     private AccountDatabase myDatabase = new AccountDatabase();
     private User_account current_session;
     private Logistic myLogistic = new Logistic();

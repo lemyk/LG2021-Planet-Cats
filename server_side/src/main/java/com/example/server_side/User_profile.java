@@ -1,6 +1,8 @@
 package com.example.server_side;
 
-public class User_profile {
+import java.io.Serializable;
+
+public class User_profile implements Serializable {
     private String healthcare_id;
     private LocationStats location;
     private String phone_number;
