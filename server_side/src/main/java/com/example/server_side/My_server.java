@@ -59,6 +59,8 @@ public class My_server {
         }
         return null;
     }
+
+    // in seconds
     public int estimateArrival(){
         if (current_session != null) {
             myLogistic.retrieveCustomerLoc(myDatabase.get_user_profile(current_session));

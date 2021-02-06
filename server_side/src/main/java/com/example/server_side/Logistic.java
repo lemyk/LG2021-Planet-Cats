@@ -9,7 +9,8 @@ public class Logistic {
 
     protected Logistic(){
         for (int i = 0; i < 2 ; i++) {
-            whiteboxAdd();
+            //whiteboxAdd();
+            whiteboxAddWithRandomLoc();
         }
     }
 
@@ -51,5 +52,12 @@ public class Logistic {
 
     private void dispatchWhitebox(int id){
         getWhiteboxById(id).initiateSession();
+    }
+
+    // only for demo
+    private void whiteboxAddWithRandomLoc() {
+        WhiteBox a = new WhiteBox(getNewId());
+        a.setLocation((int) (Math.random()*-200), (int) (Math.random()*200));
+        whiteboxList.add(a);
     }
 }
