@@ -9,11 +9,7 @@ public class Logistic implements Serializable {
     private LocationStats activeSessionCustomerLoc;
 
     protected Logistic(){
-        for (int i = 0; i < (2 + (int) Math.random() * 6); i++) {
-            whiteboxAddWithRandomLoc();
-        }
-        dispatchWhitebox(0);
-        dispatchWhitebox(2);
+
     }
 
     // commands
