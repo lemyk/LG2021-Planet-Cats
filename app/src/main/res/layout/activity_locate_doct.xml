@@ -13,29 +13,31 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         android:fontFamily="cursive"
         android:text="Doctor-On-The-Go"
         android:textColor="#FF5252"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/lGo"
+        app:layout_constraintBottom_toTopOf="@+id/scGo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/lGo"
-        android:layout_width="361dp"
-        android:layout_height="539dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:baselineAligned="false"
-        android:orientation="vertical"
-        android:padding="20sp"
+    <ScrollView
+        android:id="@+id/scGo"
+        android:layout_width="359dp"
+        android:layout_height="519dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.854"/>
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/lGo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

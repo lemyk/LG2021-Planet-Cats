@@ -34,11 +34,17 @@ public class LocateDoct extends AppCompatActivity {
 
         String my_loc = "Your current location is: [" + uP.getuProf().getLoc().toString() + "]\n\n";
         Tuple earliest = ms.getMs().estimateArrival();
-        String earliestString = "A Doctor-On-The-Go-Vehicle (id" + earliest.y + ") is currently " + 10 + " km from your location.\nEstimated arrival time: " + (float)((int)earliest.x/60.0) + " minutes";
+        String earliestString = String.format("A Doctor-On-The-Go-Vehicle (id: %d) has been scheduled to arrive to your location.\nEstimated arrival time: %.2f minutes\n\n",
+                earliest.y, (float)((int)earliest.x/60.0));
 
-        String others = "Other Doctor-On-The-Go-Vehicle in your area: \n";
+        String others = "Other Doctor-On-The-Go Vehicles in your area: \n";
+        for(Tuple<Tuple<Integer, Integer>, Boolean> k : ms.getMs().getWhiteboxData()){
+            others += String.format("- Doctor-On-The-Go Vehicle id: %d (%.2f km)\n", k.x.x,((float)(k.x.y/1000.0)));
+            others += String.format("\tCurrent Status: %s\n\n", k.y?"Busy":"Free");
+        }
 
-        tv.setText(earliestString);
+        tv.setText(my_loc + earliestString + others);
+
 
         LinearLayout ll = (LinearLayout) findViewById(R.id.lGo);
         ll.addView(tv);
