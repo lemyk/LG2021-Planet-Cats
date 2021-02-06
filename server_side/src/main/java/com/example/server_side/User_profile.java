@@ -12,7 +12,9 @@ public class User_profile {
         this.phone_number = new String(phone_number);
     }
 
-    protected User_profile(){    }
+    protected User_profile(){
+        this.location = new LocationStats((int)(Math.random() * 400), (int)(Math.random() * 400));
+    }
 
     // update
     protected void updateId(String new_id){
