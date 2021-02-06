@@ -80,7 +80,7 @@ public class My_server implements Serializable {
         return myLogistic.getWhiteBoxData();
     }
 
-    public void enqueueForDoctor(){
+    public void enqueueForDoctor() {
 
     }
 
@@ -99,6 +99,6 @@ public class My_server implements Serializable {
     public static void main(String[] args) {
         My_server a = new My_server();
         //boolean test1 = a.myDatabase.has_user("lemyk");
-        System.out.println(a.login("lemyk", "1234"));
+
     }
 }
