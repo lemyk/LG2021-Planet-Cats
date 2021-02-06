@@ -63,6 +63,8 @@ public class My_server {
 
 
     // in seconds
+    // first: time estimate
+    // second: white box id
     public Tuple<Integer, Integer> estimateArrival(){
         if (current_session != null) {
             myLogistic.retrieveCustomerLoc(myDatabase.get_user_profile(current_session));
