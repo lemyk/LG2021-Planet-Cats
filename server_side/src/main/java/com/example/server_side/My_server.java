@@ -53,6 +53,12 @@ public class My_server {
     }
 
     // service operations (only usable when there is an account on active session
+    public User_profile getCurrentSessionProfile(){
+        if (current_session != null) {
+            return myDatabase.get_user_profile(current_session);
+        }
+        return null;
+    }
     public int estimateArrival(){
         if (current_session != null) {
             myLogistic.retrieveCustomerLoc(myDatabase.get_user_profile(current_session));
