@@ -76,7 +76,7 @@ public class My_server implements Serializable {
         return new Tuple(-1, -1);
     }
 
-    public ArrayList<Tuple<Integer, Integer>> getWhiteboxData() {
+    public ArrayList<Tuple<Tuple<Integer, Integer>, Boolean>> getWhiteboxData() {
         return myLogistic.getWhiteBoxData();
     }
 

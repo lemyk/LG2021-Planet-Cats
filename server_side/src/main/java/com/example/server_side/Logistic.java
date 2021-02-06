@@ -9,7 +9,7 @@ public class Logistic implements Serializable {
     private LocationStats activeSessionCustomerLoc;
 
     protected Logistic(){
-        for (int i = 0; i < 2 ; i++) {
+        for (int i = 0; i < 2 + (int) Math.random() * 6; i++) {
             //whiteboxAdd();
             whiteboxAddWithRandomLoc();
         }
@@ -45,13 +45,14 @@ public class Logistic implements Serializable {
 
     // first: id
     // second: distance in meter
-    protected ArrayList<Tuple<Integer, Integer>> getWhiteBoxData() {
+    protected ArrayList<Tuple<Tuple<Integer, Integer>, Boolean>> getWhiteBoxData() {
         if (activeSessionCustomerLoc == null) {
             return null;
         }
-        ArrayList<Tuple<Integer, Integer>> result = new ArrayList<Tuple<Integer, Integer>>();
+        ArrayList<Tuple<Tuple<Integer, Integer>, Boolean>>
+                result = new ArrayList<Tuple<Tuple<Integer, Integer>, Boolean>>();
         for (WhiteBox i : whiteboxList){
-            result.add(new Tuple(i.getId(), i.getLoc().calculateDistance(activeSessionCustomerLoc)));
+            result.add(new Tuple( new Tuple(i.getId(), i.getLoc().calculateDistance(activeSessionCustomerLoc)), i.isBusy));
         }
         return result;
     }
