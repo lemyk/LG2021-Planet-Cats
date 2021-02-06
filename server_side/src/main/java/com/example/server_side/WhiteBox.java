@@ -6,7 +6,7 @@ public class WhiteBox implements Serializable {
     protected int task_duration;
     private LocationStats location;
     private int id;
-    protected boolean isDispatched;
+    protected boolean isBusy;
 
     // velocity in meter per sec
     protected final int VELOCITY = 12;
@@ -25,7 +25,7 @@ public class WhiteBox implements Serializable {
 
     protected void initiateSession(){
         task_duration = NEW_SESSION;
-        isDispatched = true;
+        isBusy = true;
     }
 
     // queries

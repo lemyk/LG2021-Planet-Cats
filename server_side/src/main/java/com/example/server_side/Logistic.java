@@ -13,6 +13,8 @@ public class Logistic implements Serializable {
             //whiteboxAdd();
             whiteboxAddWithRandomLoc();
         }
+        dispatchWhitebox(0);
+        dispatchWhitebox(2);
     }
 
     // commands
@@ -73,7 +75,7 @@ public class Logistic implements Serializable {
     // only for demo
     private void whiteboxAddWithRandomLoc() {
         WhiteBox a = new WhiteBox(getNewId());
-        a.setLocation((int) (Math.random()*-200), (int) (Math.random()*200));
+        a.setLocation((int) (Math.random()*-5000), (int) (Math.random()*5000));
         whiteboxList.add(a);
     }
 }
