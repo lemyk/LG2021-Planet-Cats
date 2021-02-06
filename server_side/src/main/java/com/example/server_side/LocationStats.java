@@ -19,4 +19,9 @@ public class LocationStats implements Serializable {
     protected int calculateDistance(LocationStats target){
         return Math.abs(this.x - target.x) + Math.abs(this.y - target.y);
     }
+
+    @Override
+    public String toString() {
+        return x + ", " + y;
+    }
 }

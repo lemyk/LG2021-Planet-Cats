@@ -1,7 +1,10 @@
 package com.example.server_side;
 
 import java.io.Serializable;
+<<<<<<< Updated upstream
 import java.util.ArrayList;
+=======
+>>>>>>> Stashed changes
 
 public class My_server implements Serializable {
     private AccountDatabase myDatabase = new AccountDatabase();

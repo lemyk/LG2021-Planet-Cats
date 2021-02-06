@@ -23,6 +23,8 @@ public class symptom_tracker extends AppCompatActivity {
     boolean hch_symp = false;
     boolean v_symp = false;
     boolean cP_symp = false;
+    User_Profile_Activity uP;
+    Main_Server_Activity ms;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -142,6 +144,7 @@ public class symptom_tracker extends AppCompatActivity {
 
     public void submit(View v){
         Intent intent3 = new Intent(this, Recommendation.class);
+        Intent intent1 = new Intent(this, LocateDoct.class);
         //Intent intent2 = new Intent(Intent.ACTION_CALL);
         /*boolean aP_symp = false;
         boolean br_symp = false;
@@ -152,7 +155,14 @@ public class symptom_tracker extends AppCompatActivity {
         boolean v_symp = false;
         boolean cP_symp = false;*/
         if(evaluation_point >= 18){
-            
+            Bundle bun = getIntent().getExtras();
+            if(bun != null){
+                uP = (User_Profile_Activity) bun.getParcelable("uProf");
+                ms = (Main_Server_Activity) bun.getParcelable("mServer");
+            }
+            intent1.putExtra("uProf", (Parcelable) uP);
+            intent1.putExtra("mServer", (Parcelable) ms);
+            startActivity(intent1);
         }
         else if(evaluation_point >= 12 && evaluation_point < 18){
             //intent2.setData(Uri.parse("tel:+14379707012"));

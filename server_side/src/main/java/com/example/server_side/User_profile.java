@@ -38,7 +38,7 @@ public class User_profile implements Serializable {
     }
 
     // query
-    protected LocationStats getLoc(){
+    public LocationStats getLoc(){
         return this.location;
     }
 }

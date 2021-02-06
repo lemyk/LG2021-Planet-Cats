@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.io.Serializable;
+
 public class mainPage extends AppCompatActivity {
     String uname, pwd;
     @Override
@@ -21,7 +23,7 @@ public class mainPage extends AppCompatActivity {
 
     public void loginClick(View v){
         Intent intent = new Intent(this, index_page.class);
-        My_server ms = new My_server();
+        Main_Server_Activity ms = new Main_Server_Activity();
         EditText etxt = (EditText) findViewById(R.id.uName);
         if(etxt != null){
             uname = etxt.getText().toString();
@@ -30,9 +32,9 @@ public class mainPage extends AppCompatActivity {
         if(pd != null){
             pwd = pd.getText().toString();
         }
-        if(ms.login(uname, pwd)){
-            User_profile up = ms.getCurrentSessionProfile();
-            intent.putExtra("uProf", (Parcelable) up);
+        if(ms.getMs().login(uname, pwd)){
+            User_Profile_Activity upa = new User_Profile_Activity(ms.getMs().getCurrentSessionProfile());
+            intent.putExtra("uProf", (Parcelable) upa);
             intent.putExtra("mServer", (Parcelable) ms);
             startActivity(intent);
         }else{
