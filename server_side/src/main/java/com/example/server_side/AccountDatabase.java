@@ -2,7 +2,7 @@ package com.example.server_side;
 
 import java.util.HashMap;
 
-public class Database {
+public class AccountDatabase {
     private HashMap<User_account, User_profile> account_collection = new HashMap<User_account, User_profile>();
 
     // commands
