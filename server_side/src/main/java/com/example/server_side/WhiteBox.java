@@ -10,6 +10,7 @@ public class WhiteBox {
     protected final int VELOCITY = 12;
     private final int NEW_SESSION = 30*60;
 
+    // constructor
     protected WhiteBox(int id){
         this.id = id;
         this.location = new LocationStats(0, 0);
@@ -29,6 +30,7 @@ public class WhiteBox {
     protected LocationStats getLoc(){
         return this.location;
     }
+
     protected int getId(){
         return this.id;
     }

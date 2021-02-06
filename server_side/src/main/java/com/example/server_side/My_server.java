@@ -1,17 +1,24 @@
 package com.example.server_side;
 
 public class My_server {
-    private AccountDatabase my_database = new AccountDatabase();
+    private AccountDatabase myDatabase = new AccountDatabase();
     private User_account current_session;
+    private Logistic myLogistic = new Logistic();
 
+    // init
+    public My_server(){
+        create_new_account("lemyk", "1234");
+    }
+
+    // account operations
     public boolean create_new_account(String username, String sin){
         // username exists
-        if (my_database.has_user(username)) {
+        if (myDatabase.has_user(username)) {
             return false;
         }
         // username is unique
         else {
-            current_session = my_database.create_new_account(username, sin);
+            current_session = myDatabase.create_new_account(username, sin);
             return true;
         }
     }
@@ -21,14 +28,14 @@ public class My_server {
         if (current_session == null) {
             return false;
         }
-        my_database.update_profile(current_session, health_id, location, phone_number);
+        myDatabase.update_profile(current_session, health_id, location, phone_number);
         return true;
     }
 
     public boolean login(String username, String sin){
         // username does exist
-        if (my_database.has_user(username)) {
-            current_session = my_database.auth(username, sin);
+        if (myDatabase.has_user(username)) {
+            current_session = myDatabase.auth(username, sin);
             // right pair of username, password
             if (current_session != null) {
                 return true;
@@ -45,8 +52,13 @@ public class My_server {
         return false;
     }
 
+    // service operations (only usable when there is an account on active session
     public int estimateArrival(){
-        return 0;
+        if (current_session != null) {
+            myLogistic.retrieveCustomerLoc(myDatabase.get_user_profile(current_session));
+            return myLogistic.getEarliestWhitebox().x;
+        }
+        return -1;
     }
 
     public void enqueueForDoctor(){

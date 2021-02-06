@@ -4,11 +4,13 @@ public class User_account {
     private String credential_name;
     private String credential_sin_number;
 
+    // constructor
     protected User_account(String name, String sin_number) {
         this.credential_name = new String(name);
         this.credential_sin_number = sin_number;
     }
 
+    // queries
     protected String get_username(){
         return this.credential_name;
     }
