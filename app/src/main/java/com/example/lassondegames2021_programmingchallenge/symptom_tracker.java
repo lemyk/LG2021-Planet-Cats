@@ -186,7 +186,7 @@ public class symptom_tracker extends AppCompatActivity {
                         s.setRecommendation(s.getRecommendation() + "- Drink warm lemondade.\n");
                     }
                 }
-                else if(dz_symp){
+                if(dz_symp){
                     if(s.getName() == null){
                         s.setName("Dizziness");
                     }
@@ -200,7 +200,7 @@ public class symptom_tracker extends AppCompatActivity {
                         s.setRecommendation(s.getRecommendation() + "- Lie down and close your eyes for 15 minutes.\n");
                     }
                 }
-                else if(aP_symp){
+                if(aP_symp){
                     if(s.getName() == null){
                         s.setName("Stomachache");
                     }
@@ -214,7 +214,7 @@ public class symptom_tracker extends AppCompatActivity {
                         s.setRecommendation(s.getRecommendation() + "- Lie down and keep your stomach warm. Take pain reliever if possible.\n");
                     }
                 }
-                else if(br_symp){
+                if(br_symp){
                     if(s.getName() == null){
                         s.setName("Sinus");
                     }
@@ -228,7 +228,7 @@ public class symptom_tracker extends AppCompatActivity {
                         s.setRecommendation(s.getRecommendation() + "- Drink plenty of water. Use a neti pot if possible.\n");
                     }
                 }
-                else if(bl_symp){
+                if(bl_symp){
                     if(s.getName() == null){
                         s.setName("Bleeding");
                     }
@@ -242,7 +242,7 @@ public class symptom_tracker extends AppCompatActivity {
                         s.setRecommendation(s.getRecommendation() + "- Apply bandage on the wound. If the bleeding is too much. Call 911.\n");
                     }
                 }
-                else if(hch_symp){
+                if(hch_symp){
                     if(s.getName() == null){
                         s.setName("Headache");
                     }
@@ -256,7 +256,7 @@ public class symptom_tracker extends AppCompatActivity {
                         s.setRecommendation(s.getRecommendation() + "- Take pain reliever and lie down with eyes closed for 15 minutes.\n");
                     }
                 }
-                else if(v_symp){
+                if(v_symp){
                     if(s.getName() == null){
                         s.setName("Vomiting");
                     }
@@ -270,7 +270,7 @@ public class symptom_tracker extends AppCompatActivity {
                         s.setRecommendation(s.getRecommendation() + "- Drink clear or ice-cold drinks.\n");
                     }
                 }
-                else if(cP_symp){
+                if(cP_symp){
                     if(s.getName() == null){
                         s.setName("Chest Pain");
                     }
