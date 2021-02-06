@@ -16,7 +16,11 @@ public class mainPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
+    }
 
+    public void loginClick(View v){
+        Intent intent = new Intent(this, index_page.class);
+        My_server ms = new My_server();
         EditText etxt = (EditText) findViewById(R.id.uName);
         if(etxt != null){
             uname = etxt.getText().toString();
@@ -25,18 +29,12 @@ public class mainPage extends AppCompatActivity {
         if(pd != null){
             pwd = pd.getText().toString();
         }
-    }
-
-    public void loginClick(View v){
-        Intent intent = new Intent(this, index_page.class);
-        My_server ms = new My_server();
         if(ms.login(uname, pwd)){
             User_profile up = ms.getCurrentSessionProfile();
             startActivity(intent);
         }else{
             Toast.makeText(mainPage.this,
                     "Your username or PIN is incorrect. Please try again.", Toast.LENGTH_LONG).show();
-            startActivity(intent);
         }
     }
 }
