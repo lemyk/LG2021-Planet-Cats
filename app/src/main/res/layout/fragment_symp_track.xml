@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sympTracker"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SympTracker">
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="SYMPTOM TRACKER"
+        android:textColor="#E91E63"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/bAbdominalPain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Abdominal Pain" />
+
+        <Button
+            android:id="@+id/bBreath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Breathing Problems" />
+
+        <Button
+            android:id="@+id/bDizzy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dizzy" />
+
+        <Button
+            android:id="@+id/bCough"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Coughing" />
+
+        <Button
+            android:id="@+id/bBleeding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bleeding" />
+
+        <Button
+            android:id="@+id/bHeadache"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Headache" />
+
+        <Button
+            android:id="@+id/bVomitting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vomit" />
+
+        <Button
+            android:id="@+id/bChestPain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chest Pain" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bSubmit"
+        android:layout_width="340dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#E91E63"
+        android:text="Submit"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
