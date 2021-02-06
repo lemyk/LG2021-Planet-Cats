@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class index_page extends AppCompatActivity {
+import com.example.server_side.User_profile;
 
+public class index_page extends AppCompatActivity {
+    User_profile up;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index_page);
+
     }
 
     public void sTracker(View v){

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.server_side.*;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -31,6 +32,8 @@ public class mainPage extends AppCompatActivity {
         }
         if(ms.login(uname, pwd)){
             User_profile up = ms.getCurrentSessionProfile();
+            intent.putExtra("uProf", (Parcelable) up);
+            intent.putExtra("mServer", (Parcelable) ms);
             startActivity(intent);
         }else{
             Toast.makeText(mainPage.this,

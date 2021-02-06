@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -59,5 +60,10 @@ public class Recommendation extends AppCompatActivity implements TextToSpeech.On
 
         String toSpeak = tv.getText().toString();
         return tv;
+    }
+
+    public void callDoc(){
+        Toast.makeText(Recommendation.this,
+                "You are being transferred to the Doctor Hotline.", Toast.LENGTH_SHORT).show();
     }
 }
